@@ -1,0 +1,67 @@
+﻿@page
+@model Library.Pages.Books.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+<link rel="stylesheet" href="~/css/detail.css" asp-append-version="true" />
+
+<div class="text-center m-5">
+<h1>Thesis</h1>
+</div>
+<hr />
+
+<div class="d-flex justify-content-between m-5">
+        <span> 
+            <h4>Details</h4>
+        </span>
+   
+        <span>
+            <!-- <a asp-page="./Edit" asp-route-id="@Model.ThesisEntity?.Id">Edit</a> |-->
+            <a class="btn btn-info" asp-page="./Index">Back to List</a>
+        </span>
+    </div>
+
+<div>
+<div class="ms-5 me-5" style="background-color:rgba(246, 246, 246, 0.8); padding: 40px; border-left: 1px solid black;">
+    <dl class="row">
+        <dt class="col-sm-2">
+            Thesis Title
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ThesisEntity.thesisTitle)
+        </dd>
+        <dt class="col-sm-2">
+            Description
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ThesisEntity.thesisDescription)
+        </dd>
+        <dt class="col-sm-2">
+            Author/s
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ThesisEntity.thesisAuthor)
+        </dd>
+        <dt class="col-sm-2">
+            Related Course
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ThesisEntity.thesisCourse)
+        </dd>
+        <dt class="col-sm-2">
+            Year Published
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ThesisEntity.yearPublished)
+        </dd>
+    </dl>
+</div>
+
+<div class="text-center m-5">
+    <embed src="~/pdf/DonJuan.pdf" type="application/pdf" width="100%" height="900px" />
+</div>
+</div>
+
+
+

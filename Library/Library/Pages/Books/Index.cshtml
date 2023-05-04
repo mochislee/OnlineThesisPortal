@@ -1,0 +1,66 @@
+﻿@page
+@model Library.Pages.Books.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="p-3" >
+    <div class="text-center m-5">
+        <h2 class="display-4">Discover</h2>
+        <hr class=" m-4" />
+
+        <form asp-page="./Index" method="get">
+
+            <div class="form-actions no-color">
+                <div class="input-group  mx-auto w-75 input-group-lg  ">
+                    <input type="text" name="searchString" class="form-control" placeholder="I am looking for.." aria-label="Recipient's username" aria-describedby="button-addon2" />
+                    <input type="submit" class="btn btn-warning" value="Search" />
+                </div>
+            </div>
+        </form>
+        <div>
+            <br />
+            Tags:  <a style="margin-left:10px"class="btn btn-light" asp-page="./Index"> Thesis </a>
+          
+        </div>
+
+    </div>
+</div>
+
+<div class="m-3">
+    <h4>All Books Available </h4>
+    <br />
+
+    <table class="table table-borderless">
+        <tbody class="m-10">
+            @foreach (var item in Model.ThesisEntity)
+            {
+
+                <tr class="border-bottom ">
+                    <th> <a asp-page="./Details" asp-route-id="@item.Id" style="color:darkblue">@Html.DisplayFor(modelItem => item.thesisTitle)</a> </th>
+                    <td style="color: darkred">
+                        <a href="C:\Users\kriselle\source\repos\Library\Library\wwwroot\pdf\DonJuan.pdf">[View]</a>
+                    </td>
+                </tr>
+                <tr class="border-bottom ">
+                    <td>@Html.DisplayFor(modelItem => item.thesisDescription)</td>
+                </tr>
+                <tr>
+                <tr class="  mb-10">
+                    <td>@Html.DisplayFor(modelItem => item.thesisAuthor) | @Html.DisplayFor(modelItem => item.yearPublished)</td>
+                    <td><b>Course: </b>@Html.DisplayFor(modelItem => item.thesisCourse)</td>
+                </tr>
+                
+
+                </tr>
+            }
+        </tbody>
+    </table>
+    <br />
+</div>
+
+<div>
+   PAGE 1,2,3
+</div>
+               

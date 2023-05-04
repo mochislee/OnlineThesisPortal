@@ -1,0 +1,52 @@
+﻿@page
+@model Library.Pages.Books.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>ThesisEntity</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ThesisEntity.thesisTitle)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ThesisEntity.thesisTitle)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ThesisEntity.thesisDescription)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ThesisEntity.thesisDescription)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ThesisEntity.thesisAuthor)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ThesisEntity.thesisAuthor)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ThesisEntity.thesisCourse)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ThesisEntity.thesisCourse)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ThesisEntity.yearPublished)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ThesisEntity.yearPublished)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="ThesisEntity.Id" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>
